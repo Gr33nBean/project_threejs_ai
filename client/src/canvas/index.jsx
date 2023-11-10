@@ -1,15 +1,21 @@
-import { Canvas } from '@react-three/fiber'
-import { Environment, Center } from '@react-three/drei';
+import { Canvas } from "@react-three/fiber";
+import {
+  Environment,
+  Center,
+  OrbitControls,
+  Stats,
+  Text,
+} from "@react-three/drei";
 
-import Shirt from './Shirt';
-import Backdrop from './Backdrop';
-import CameraRig from './CameraRig';
+import Shirt from "./Shirt";
+import Backdrop from "./Backdrop";
+import CameraRig from "./CameraRig";
 
 const CanvasModel = () => {
   return (
     <Canvas
       shadows
-      camera={{ position: [0, 0, 0], fov: 25 }}
+      camera={{ fov: 75 }}
       gl={{ preserveDrawingBuffer: true }}
       className="w-full max-w-full h-full transition-all ease-in"
     >
@@ -22,8 +28,10 @@ const CanvasModel = () => {
           <Shirt />
         </Center>
       </CameraRig>
+      {/* <OrbitControls /> */}
+      {/* <Stats /> */}
     </Canvas>
-  )
-}
+  );
+};
 
-export default CanvasModel
+export default CanvasModel;
